@@ -1,6 +1,21 @@
 " Basic                                     "{{{1
 
+" vundler                                   "{{{1
+set runtimepath+=~/.vim/vundle
+call vundle#rc()
+
+Bundle 'quickrun'
+Bundle 'Lucius'
+
 " Options                                   "{{{2
+if (1 < &t_Co || has('gui')) && has('syntax')
+  syntax enable
+  if !exists('g:colors_name')
+    colorscheme lucius
+    set background=dark
+  endif
+endif
+
 set ambiwidth=double
 set autoindent
 set autoread
@@ -46,12 +61,6 @@ let &statusline .= '%<%f %h%m%r%w'
 let &statusline .= '%='
 let &statusline .= '[%{&l:fileencoding == "" ? &encoding : &l:fileencoding}]'
 let &statusline .= '  %-14.(%l,%c%V%) %P'
-
-" vundler                                   "{{{1
-set runtimepath+=~/.vim/vundle
-call vundle#rc()
-
-Bundle 'quickrun'
 
 " Convenience                               "{{{1
 " http://vim-users.jp/2009/09/hack74/       "{{{2
