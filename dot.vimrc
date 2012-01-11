@@ -5,12 +5,13 @@ set runtimepath+=~/.vim/vundle
 call vundle#rc()
 
 Bundle 'Lucius'
+Bundle 'Shougo/neocomplcache'
+Bundle 'Shougo/unite.vim'
 Bundle 'Syntastic'
 Bundle 'VimOrganizer'
-Bundle 'neocomplecache'
+Bundle 'gtags.vim'
 Bundle 'quickrun'
 Bundle 'tracwiki'
-Bundle 'unite.vim'
 
 " Options                                   "{{{2
 if (1 < &t_Co || has('gui')) && has('syntax')
