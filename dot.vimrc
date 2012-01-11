@@ -1,11 +1,16 @@
 " Basic                                     "{{{1
 
-" vundler                                   "{{{1
+" vundler                                   "{{{2
 set runtimepath+=~/.vim/vundle
 call vundle#rc()
 
-Bundle 'quickrun'
 Bundle 'Lucius'
+Bundle 'Syntastic'
+Bundle 'VimOrganizer'
+Bundle 'neocomplecache'
+Bundle 'quickrun'
+Bundle 'tracwiki'
+Bundle 'unite.vim'
 
 " Options                                   "{{{2
 if (1 < &t_Co || has('gui')) && has('syntax')
@@ -72,7 +77,7 @@ if !has('gui_running') && !(has('win32') || has('win64'))
 else
   autocmd AutoReloadCmd BufWritePost $MYVIMRC source $MYVIMRC |
     \if has('gui_running') | source $MYGVIMRC
-  autocmd AutoReloadCmd BufWriterPost $MYGVIMRC if has('gui_running') | source $MYGVIMRC
+  autocmd AutoReloadCmd BufWritePost $MYGVIMRC if has('gui_running') | source $MYGVIMRC
 endif
 
 " vim: expandtab softtabstop=2 shiftwidth=2
